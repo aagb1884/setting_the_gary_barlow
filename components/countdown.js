@@ -2,9 +2,8 @@ import * as React from "react";
 import { useEffect, useState } from "react";
 import { View, Text } from "react-native";
 
-const Countdown = ({ reset }) => {
+const Countdown = ({ reset, counter, setCounter }) => {
     
-        const [counter, setCounter] = useState(60);
 
         useEffect(() => {
             if (reset) {

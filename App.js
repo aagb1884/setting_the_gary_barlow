@@ -9,6 +9,7 @@ export default function App() {
   const [currentSong, setCurrentSong] = useState(null);
   const [previousAnswer, setPreviousAnswer] = useState(null);
   const [score, setScore] = useState(0);
+  const [counter, setCounter] = useState(60);
   const [reset, setReset] = useState(false);
 
 
@@ -89,7 +90,7 @@ const checkAnswer = () => {
       Alert.alert('First Answer', 'This is the first answer, set as previous.');
     } else {
       if (songFound.chart_position <= previousAnswer.chart_position) {
-        setScore(score + 1);
+        setScore(score + 1 + counter);
         setIsAnswerCorrect(true);
         Alert.alert('Correct', 'Your answer is correct!');
       } else {
@@ -125,7 +126,10 @@ const checkAnswer = () => {
         <Text>{score}</Text>
         
       </View>
-      <Countdown reset={reset} />
+      <Countdown 
+      reset={reset}
+      counter={counter}
+      setCounter={setCounter} />
       <StatusBar style="auto" />
     </View>
   );
