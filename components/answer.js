@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { View, Text, TextInput, SafeAreaView, StyleSheet, Pressable } from 'react-native';
 
 
-export default function Answer({checkAnswer, setCurrentSong}) {
+export default function Answer({checkAnswer, setCurrentSong, setReset}) {
     const [text, setText] = useState('');
 
     
@@ -12,10 +12,11 @@ export default function Answer({checkAnswer, setCurrentSong}) {
       };
 
       const handleSetCurrentSong = () => {
+        setReset(true)
         handleClearText();
         setCurrentSong(text);
        checkAnswer();
-       
+       setTimeout(() => setReset(false), 0);
       };
 
       
@@ -37,6 +38,7 @@ export default function Answer({checkAnswer, setCurrentSong}) {
                 onPress={handleClearText}>
                    <Text>Clear</Text> 
                 </Pressable>
+               
             </View>
         </SafeAreaView>
     )

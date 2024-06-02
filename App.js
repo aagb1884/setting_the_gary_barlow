@@ -9,6 +9,7 @@ export default function App() {
   const [currentSong, setCurrentSong] = useState(null);
   const [previousAnswer, setPreviousAnswer] = useState(null);
   const [score, setScore] = useState(0);
+  const [reset, setReset] = useState(false);
 
 
   const songs = [
@@ -118,12 +119,13 @@ const checkAnswer = () => {
     <View style={styles.container}>
       <Answer 
       setCurrentSong={setCurrentSong} 
-      checkAnswer={checkAnswer} />
+      checkAnswer={checkAnswer} 
+      setReset={setReset} />
       <View>
         <Text>{score}</Text>
         
       </View>
-      <Countdown />
+      <Countdown reset={reset} />
       <StatusBar style="auto" />
     </View>
   );
