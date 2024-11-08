@@ -1,6 +1,7 @@
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { StyleSheet, Pressable, View, Text, useColorScheme, ScrollView } from 'react-native';
 import { Link, useRouter } from 'expo-router';
+import Header from '../components/header';
 
 export default function Index () {
   const colorScheme = useColorScheme();
@@ -15,7 +16,7 @@ export default function Index () {
 
   return (
     <SafeAreaProvider>
-     
+     <Header />
       <ScrollView style={[styles.mainContainer, themeContainerStyle]}>
         <View style={styles.contentContainer}>
           <Text style={[styles.title, themeContainerStyle]}>
@@ -29,7 +30,7 @@ export default function Index () {
           <View style={styles.buttonsContainer}>
             <View style={styles.homePageButton}>
             <Link href="/play">
-              <Pressable onPress={() => handlePress('/game')} style={styles.playButton}>
+              <Pressable onPress={() => handlePress('/play')} style={styles.playButton}>
                 <Text style={styles.buttonLabel}>Play!</Text>
               </Pressable>
             </Link>
@@ -45,7 +46,7 @@ const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
     flexDirection: 'column',
-    
+    backgroundColor: 'crimson',
   },
   contentContainer: {
     alignItems: 'stretch',
@@ -66,11 +67,17 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   },
   lightContainer: {
-    backgroundColor: "white",
     color: "black"
   },
   darkContainer: {
-    backgroundColor: 'black',
     color: 'white'
   },
+  homePageButton: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 10,
+    borderRadius: 5,
+    borderWidth: 2,
+    borderColor: 'black',
+  }
 });

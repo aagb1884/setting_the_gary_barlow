@@ -4,11 +4,11 @@ import { View, Text, TextInput, SafeAreaView, StyleSheet, Pressable } from 'reac
 
 
 export default function Answer({checkAnswer, setCurrentSong, setReset}) {
-    const [text, setText] = useState('');
+    const [text, onChangeText] = useState('');
 
     
     const handleClearText = () => {
-        setText('');
+        onChangeText('');
       };
 
       const handleSetCurrentSong = () => {
@@ -19,14 +19,12 @@ export default function Answer({checkAnswer, setCurrentSong, setReset}) {
        setTimeout(() => setReset(false), 0);
       };
 
-      
-
     return (
         <SafeAreaView>
             <View style={styles.inputBox}>
                 <TextInput 
                 style={styles.input}
-                onChangeText={setText}
+                onChangeText={onChangeText}
                 value={text}
                 placeholder="Enter Song Title..."
                 />

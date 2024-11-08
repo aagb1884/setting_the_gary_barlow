@@ -1,12 +1,12 @@
 {
   "expo": {
-    "name": "setting_the_Gary_Barlow",
-    "slug": "setting_the_Gary_Barlow",
+    "name": "setting_the_gary_barlow",
+    "slug": "setting_the_gary_barlow",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
-    "scheme": "setting_the_Gary_Barlow-scheme",
+    "scheme": "setting_the_gary_barlow-scheme",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
